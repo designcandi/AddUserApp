@@ -37,11 +37,11 @@ namespace TestAddUser3.Controllers
         public String AddUser(User user)
         {
                 var password = user.Password;
-                var passwordHashed = "";
+                var passwordHashed = string.Empty;
                 var salt = GetRandomSalt();
                 passwordHashed = HashPassword(password, salt);
 
-                var status = "Okay";
+                var status = string.Empty;
 
                 using (SqlConnection con = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=TestAddUser;Trusted_Connection=True;"))
                 {
